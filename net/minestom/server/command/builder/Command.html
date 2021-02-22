@@ -26,8 +26,8 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10};
-var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
+var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":9,"i11":10,"i12":10,"i13":10,"i14":10};
+var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
 var tableTab = "tableTab";
@@ -88,13 +88,13 @@ loadScripts(document, 'script');</script>
 <ul class="subNavList">
 <li>Summary:&nbsp;</li>
 <li>Nested&nbsp;|&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
 <li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method.summary">Method</a></li>
 </ul>
 <ul class="subNavList">
 <li>Detail:&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
 <li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method.detail">Method</a></li>
 </ul>
@@ -156,6 +156,29 @@ extends java.lang.Object</pre>
 <div class="summary">
 <ul class="blockList">
 <li class="blockList">
+<!-- =========== FIELD SUMMARY =========== -->
+<section role="region">
+<ul class="blockList">
+<li class="blockList"><a id="field.summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<table class="memberSummary">
+<caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colSecond" scope="col">Field</th>
+<th class="colLast" scope="col">Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static org.slf4j.Logger</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#LOGGER">LOGGER</a></span></code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+</table>
+</li>
+</ul>
+</section>
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
 <section role="region">
 <ul class="blockList">
@@ -194,22 +217,27 @@ extends java.lang.Object</pre>
 </a>
 <h3>Method Summary</h3>
 <table class="memberSummary">
-<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t1" class="tableTab"><span><a href="javascript:show(1);">Static Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
 <tr>
 <th class="colFirst" scope="col">Modifier and Type</th>
 <th class="colSecond" scope="col">Method</th>
 <th class="colLast" scope="col">Description</th>
 </tr>
 <tr id="i0" class="altColor">
-<td class="colFirst"><code><a href="CommandSyntax.html" title="class in net.minestom.server.command.builder">CommandSyntax</a></code></td>
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#addSubcommand(net.minestom.server.command.builder.Command)">addSubcommand</a></span>&#8203;(<a href="Command.html" title="class in net.minestom.server.command.builder">Command</a>&nbsp;command)</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code>java.util.Collection&lt;<a href="CommandSyntax.html" title="class in net.minestom.server.command.builder">CommandSyntax</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#addSyntax(net.minestom.server.command.builder.CommandExecutor,net.minestom.server.command.builder.arguments.Argument...)">addSyntax</a></span>&#8203;(<a href="CommandExecutor.html" title="interface in net.minestom.server.command.builder">CommandExecutor</a>&nbsp;executor,
          <a href="arguments/Argument.html" title="class in net.minestom.server.command.builder.arguments">Argument</a>&lt;?&gt;...&nbsp;args)</code></th>
 <td class="colLast">
-<div class="block">Adds a new syntax in the command without any condition.</div>
+<div class="block">Adds a new syntax without condition.</div>
 </td>
 </tr>
-<tr id="i1" class="rowColor">
-<td class="colFirst"><code><a href="CommandSyntax.html" title="class in net.minestom.server.command.builder">CommandSyntax</a></code></td>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code>java.util.Collection&lt;<a href="CommandSyntax.html" title="class in net.minestom.server.command.builder">CommandSyntax</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#addSyntax(net.minestom.server.command.builder.condition.CommandCondition,net.minestom.server.command.builder.CommandExecutor,net.minestom.server.command.builder.arguments.Argument...)">addSyntax</a></span>&#8203;(<a href="condition/CommandCondition.html" title="interface in net.minestom.server.command.builder.condition">CommandCondition</a>&nbsp;commandCondition,
          <a href="CommandExecutor.html" title="interface in net.minestom.server.command.builder">CommandExecutor</a>&nbsp;executor,
          <a href="arguments/Argument.html" title="class in net.minestom.server.command.builder.arguments">Argument</a>&lt;?&gt;...&nbsp;args)</code></th>
@@ -217,21 +245,21 @@ extends java.lang.Object</pre>
 <div class="block">Adds a new syntax in the command.</div>
 </td>
 </tr>
-<tr id="i2" class="altColor">
+<tr id="i3" class="rowColor">
 <td class="colFirst"><code>java.lang.String[]</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getAliases()">getAliases</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Gets the command's aliases.</div>
 </td>
 </tr>
-<tr id="i3" class="rowColor">
+<tr id="i4" class="altColor">
 <td class="colFirst"><code><a href="condition/CommandCondition.html" title="interface in net.minestom.server.command.builder.condition">CommandCondition</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getCondition()">getCondition</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Gets the <a href="condition/CommandCondition.html" title="interface in net.minestom.server.command.builder.condition"><code>CommandCondition</code></a>.</div>
 </td>
 </tr>
-<tr id="i4" class="altColor">
+<tr id="i5" class="rowColor">
 <td class="colFirst"><code><a href="CommandExecutor.html" title="interface in net.minestom.server.command.builder">CommandExecutor</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getDefaultExecutor()">getDefaultExecutor</a></span>()</code></th>
 <td class="colLast">
@@ -239,21 +267,26 @@ extends java.lang.Object</pre>
  or if no corresponding syntax has been found.</div>
 </td>
 </tr>
-<tr id="i5" class="rowColor">
+<tr id="i6" class="altColor">
 <td class="colFirst"><code>java.lang.String</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getName()">getName</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Gets the main command's name.</div>
 </td>
 </tr>
-<tr id="i6" class="altColor">
+<tr id="i7" class="rowColor">
+<td class="colFirst"><code>java.util.List&lt;<a href="Command.html" title="class in net.minestom.server.command.builder">Command</a>&gt;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getSubcommands()">getSubcommands</a></span>()</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr id="i8" class="altColor">
 <td class="colFirst"><code>java.util.Collection&lt;<a href="CommandSyntax.html" title="class in net.minestom.server.command.builder">CommandSyntax</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getSyntaxes()">getSyntaxes</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Gets all the syntaxes of this command.</div>
 </td>
 </tr>
-<tr id="i7" class="rowColor">
+<tr id="i9" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#globalListener(net.minestom.server.command.CommandSender,net.minestom.server.command.builder.Arguments,java.lang.String)">globalListener</a></span>&#8203;(<a href="../CommandSender.html" title="interface in net.minestom.server.command">CommandSender</a>&nbsp;sender,
               <a href="Arguments.html" title="class in net.minestom.server.command.builder">Arguments</a>&nbsp;arguments,
@@ -262,16 +295,23 @@ extends java.lang.Object</pre>
 <div class="block">Called when a <a href="../CommandSender.html" title="interface in net.minestom.server.command"><code>CommandSender</code></a> executes this command before any syntax callback.</div>
 </td>
 </tr>
-<tr id="i8" class="altColor">
+<tr id="i10" class="altColor">
+<td class="colFirst"><code>static boolean</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isValidName(net.minestom.server.command.builder.Command,java.lang.String)">isValidName</a></span>&#8203;(<a href="Command.html" title="class in net.minestom.server.command.builder">Command</a>&nbsp;command,
+           java.lang.String&nbsp;name)</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr id="i11" class="rowColor">
 <td class="colFirst"><code>java.lang.String[]</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#onDynamicWrite(java.lang.String)">onDynamicWrite</a></span>&#8203;(java.lang.String&nbsp;text)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#onDynamicWrite(net.minestom.server.command.CommandSender,java.lang.String)">onDynamicWrite</a></span>&#8203;(<a href="../CommandSender.html" title="interface in net.minestom.server.command">CommandSender</a>&nbsp;sender,
+              java.lang.String&nbsp;text)</code></th>
 <td class="colLast">
 <div class="block">Allows for tab auto completion, this is called everytime the player press a key in the chat
  when in a dynamic argument (<a href="arguments/ArgumentDynamicWord.html" title="class in net.minestom.server.command.builder.arguments"><code>ArgumentDynamicWord</code></a> (when <a href="arguments/minecraft/SuggestionType.html#ASK_SERVER"><code>SuggestionType.ASK_SERVER</code></a> is used)
  and <a href="arguments/ArgumentDynamicStringArray.html" title="class in net.minestom.server.command.builder.arguments"><code>ArgumentDynamicStringArray</code></a>).</div>
 </td>
 </tr>
-<tr id="i9" class="rowColor">
+<tr id="i12" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setArgumentCallback(net.minestom.server.command.builder.ArgumentCallback,net.minestom.server.command.builder.arguments.Argument)">setArgumentCallback</a></span>&#8203;(<a href="ArgumentCallback.html" title="interface in net.minestom.server.command.builder">ArgumentCallback</a>&nbsp;callback,
                    <a href="arguments/Argument.html" title="class in net.minestom.server.command.builder.arguments">Argument</a>&lt;?&gt;&nbsp;argument)</code></th>
@@ -279,14 +319,14 @@ extends java.lang.Object</pre>
 <div class="block">Sets an <a href="ArgumentCallback.html" title="interface in net.minestom.server.command.builder"><code>ArgumentCallback</code></a>.</div>
 </td>
 </tr>
-<tr id="i10" class="altColor">
+<tr id="i13" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setCondition(net.minestom.server.command.builder.condition.CommandCondition)">setCondition</a></span>&#8203;(<a href="condition/CommandCondition.html" title="interface in net.minestom.server.command.builder.condition">CommandCondition</a>&nbsp;commandCondition)</code></th>
 <td class="colLast">
 <div class="block">Sets the <a href="condition/CommandCondition.html" title="interface in net.minestom.server.command.builder.condition"><code>CommandCondition</code></a>.</div>
 </td>
 </tr>
-<tr id="i11" class="rowColor">
+<tr id="i14" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setDefaultExecutor(net.minestom.server.command.builder.CommandExecutor)">setDefaultExecutor</a></span>&#8203;(<a href="CommandExecutor.html" title="interface in net.minestom.server.command.builder">CommandExecutor</a>&nbsp;executor)</code></th>
 <td class="colLast">
@@ -310,6 +350,25 @@ extends java.lang.Object</pre>
 <div class="details">
 <ul class="blockList">
 <li class="blockList">
+<!-- ============ FIELD DETAIL =========== -->
+<section role="region">
+<ul class="blockList">
+<li class="blockList"><a id="field.detail">
+<!--   -->
+</a>
+<h3>Field Detail</h3>
+<a id="LOGGER">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>LOGGER</h4>
+<pre>public static final&nbsp;org.slf4j.Logger LOGGER</pre>
+</li>
+</ul>
+</li>
+</ul>
+</section>
 <!-- ========= CONSTRUCTOR DETAIL ======== -->
 <section role="region">
 <ul class="blockList">
@@ -421,18 +480,39 @@ public&nbsp;<a href="condition/CommandCondition.html" title="interface in net.mi
 </dl>
 </li>
 </ul>
+<a id="addSubcommand(net.minestom.server.command.builder.Command)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>addSubcommand</h4>
+<pre class="methodSignature">public&nbsp;void&nbsp;addSubcommand&#8203;(@NotNull
+                          <a href="Command.html" title="class in net.minestom.server.command.builder">Command</a>&nbsp;command)</pre>
+</li>
+</ul>
+<a id="getSubcommands()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getSubcommands</h4>
+<pre class="methodSignature">@NotNull
+public&nbsp;java.util.List&lt;<a href="Command.html" title="class in net.minestom.server.command.builder">Command</a>&gt;&nbsp;getSubcommands()</pre>
+</li>
+</ul>
 <a id="addSyntax(net.minestom.server.command.builder.condition.CommandCondition,net.minestom.server.command.builder.CommandExecutor,net.minestom.server.command.builder.arguments.Argument...)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>addSyntax</h4>
-<pre class="methodSignature">public&nbsp;<a href="CommandSyntax.html" title="class in net.minestom.server.command.builder">CommandSyntax</a>&nbsp;addSyntax&#8203;(@Nullable
-                               <a href="condition/CommandCondition.html" title="interface in net.minestom.server.command.builder.condition">CommandCondition</a>&nbsp;commandCondition,
-                               @NotNull
-                               <a href="CommandExecutor.html" title="interface in net.minestom.server.command.builder">CommandExecutor</a>&nbsp;executor,
-                               @NotNull
-                               <a href="arguments/Argument.html" title="class in net.minestom.server.command.builder.arguments">Argument</a>&lt;?&gt;...&nbsp;args)</pre>
+<pre class="methodSignature">@NotNull
+public&nbsp;java.util.Collection&lt;<a href="CommandSyntax.html" title="class in net.minestom.server.command.builder">CommandSyntax</a>&gt;&nbsp;addSyntax&#8203;(@Nullable
+                                                     <a href="condition/CommandCondition.html" title="interface in net.minestom.server.command.builder.condition">CommandCondition</a>&nbsp;commandCondition,
+                                                     @NotNull
+                                                     <a href="CommandExecutor.html" title="interface in net.minestom.server.command.builder">CommandExecutor</a>&nbsp;executor,
+                                                     @NotNull
+                                                     <a href="arguments/Argument.html" title="class in net.minestom.server.command.builder.arguments">Argument</a>&lt;?&gt;...&nbsp;args)</pre>
 <div class="block">Adds a new syntax in the command.
  <p>
  A syntax is simply a list of arguments and an executor called when successfully parsed.</div>
@@ -442,7 +522,8 @@ public&nbsp;<a href="condition/CommandCondition.html" title="interface in net.mi
 <dd><code>executor</code> - the executor to call when the syntax is successfully received</dd>
 <dd><code>args</code> - all the arguments of the syntax, the length needs to be higher than 0</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>the created <a href="CommandSyntax.html" title="class in net.minestom.server.command.builder"><code>CommandSyntax</code></a></dd>
+<dd>the created <a href="CommandSyntax.html" title="class in net.minestom.server.command.builder"><code>syntaxes</code></a>,
+ there can be multiple of them when optional arguments are used</dd>
 </dl>
 </li>
 </ul>
@@ -452,17 +533,13 @@ public&nbsp;<a href="condition/CommandCondition.html" title="interface in net.mi
 <ul class="blockList">
 <li class="blockList">
 <h4>addSyntax</h4>
-<pre class="methodSignature">public&nbsp;<a href="CommandSyntax.html" title="class in net.minestom.server.command.builder">CommandSyntax</a>&nbsp;addSyntax&#8203;(@NotNull
-                               <a href="CommandExecutor.html" title="interface in net.minestom.server.command.builder">CommandExecutor</a>&nbsp;executor,
-                               @NotNull
-                               <a href="arguments/Argument.html" title="class in net.minestom.server.command.builder.arguments">Argument</a>&lt;?&gt;...&nbsp;args)</pre>
-<div class="block">Adds a new syntax in the command without any condition.</div>
+<pre class="methodSignature">@NotNull
+public&nbsp;java.util.Collection&lt;<a href="CommandSyntax.html" title="class in net.minestom.server.command.builder">CommandSyntax</a>&gt;&nbsp;addSyntax&#8203;(@NotNull
+                                                     <a href="CommandExecutor.html" title="interface in net.minestom.server.command.builder">CommandExecutor</a>&nbsp;executor,
+                                                     @NotNull
+                                                     <a href="arguments/Argument.html" title="class in net.minestom.server.command.builder.arguments">Argument</a>&lt;?&gt;...&nbsp;args)</pre>
+<div class="block">Adds a new syntax without condition.</div>
 <dl>
-<dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>executor</code> - the executor to call when the syntax is successfully received</dd>
-<dd><code>args</code> - all the arguments of the syntax, the length needs to be higher than 0</dd>
-<dt><span class="returnLabel">Returns:</span></dt>
-<dd>the created <a href="CommandSyntax.html" title="class in net.minestom.server.command.builder"><code>CommandSyntax</code></a></dd>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="#addSyntax(net.minestom.server.command.builder.condition.CommandCondition,net.minestom.server.command.builder.CommandExecutor,net.minestom.server.command.builder.arguments.Argument...)"><code>addSyntax(CommandCondition, CommandExecutor, Argument[])</code></a></dd>
 </dl>
@@ -550,7 +627,7 @@ public&nbsp;java.util.Collection&lt;<a href="CommandSyntax.html" title="class in
 </dl>
 </li>
 </ul>
-<a id="onDynamicWrite(java.lang.String)">
+<a id="onDynamicWrite(net.minestom.server.command.CommandSender,java.lang.String)">
 <!--   -->
 </a>
 <ul class="blockList">
@@ -558,22 +635,25 @@ public&nbsp;java.util.Collection&lt;<a href="CommandSyntax.html" title="class in
 <h4>onDynamicWrite</h4>
 <pre class="methodSignature">@Nullable
 public&nbsp;java.lang.String[]&nbsp;onDynamicWrite&#8203;(@NotNull
+                                         <a href="../CommandSender.html" title="interface in net.minestom.server.command">CommandSender</a>&nbsp;sender,
+                                         @NotNull
                                          java.lang.String&nbsp;text)</pre>
 <div class="block">Allows for tab auto completion, this is called everytime the player press a key in the chat
  when in a dynamic argument (<a href="arguments/ArgumentDynamicWord.html" title="class in net.minestom.server.command.builder.arguments"><code>ArgumentDynamicWord</code></a> (when <a href="arguments/minecraft/SuggestionType.html#ASK_SERVER"><code>SuggestionType.ASK_SERVER</code></a> is used)
  and <a href="arguments/ArgumentDynamicStringArray.html" title="class in net.minestom.server.command.builder.arguments"><code>ArgumentDynamicStringArray</code></a>).</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>sender</code> - the command sender</dd>
 <dd><code>text</code> - the whole player's text</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>the array containing all the suggestion for the current arg (split " "), can be null</dd>
+<dd>the array containing all the suggestion for the current arg (split SPACE), can be null</dd>
 </dl>
 </li>
 </ul>
 <a id="globalListener(net.minestom.server.command.CommandSender,net.minestom.server.command.builder.Arguments,java.lang.String)">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>globalListener</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;globalListener&#8203;(@NotNull
@@ -594,6 +674,18 @@ public&nbsp;java.lang.String[]&nbsp;onDynamicWrite&#8203;(@NotNull
 <dd><code>arguments</code> - the UNCHECKED arguments of the command, some can be null even when unexpected</dd>
 <dd><code>command</code> - the raw UNCHECKED received command</dd>
 </dl>
+</li>
+</ul>
+<a id="isValidName(net.minestom.server.command.builder.Command,java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>isValidName</h4>
+<pre class="methodSignature">public static&nbsp;boolean&nbsp;isValidName&#8203;(@NotNull
+                                  <a href="Command.html" title="class in net.minestom.server.command.builder">Command</a>&nbsp;command,
+                                  @NotNull
+                                  java.lang.String&nbsp;name)</pre>
 </li>
 </ul>
 </li>
@@ -648,13 +740,13 @@ public&nbsp;java.lang.String[]&nbsp;onDynamicWrite&#8203;(@NotNull
 <ul class="subNavList">
 <li>Summary:&nbsp;</li>
 <li>Nested&nbsp;|&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
 <li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method.summary">Method</a></li>
 </ul>
 <ul class="subNavList">
 <li>Detail:&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
 <li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method.detail">Method</a></li>
 </ul>

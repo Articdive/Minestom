@@ -26,7 +26,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":9,"i1":9,"i2":9,"i3":9,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10};
+var data = {"i0":9,"i1":9,"i2":9,"i3":9,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":9};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -130,9 +130,12 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <ul class="blockList">
 <li class="blockList">
 <hr>
-<pre>public class <span class="typeNameLabel">ChatColor</span>
+<pre>public final class <span class="typeNameLabel">ChatColor</span>
 extends java.lang.Object</pre>
-<div class="block">Represents a color in a text.</div>
+<div class="block">Represents a color in a text. You can either use one of the pre-made colors
+ or make your own using RGB. <a href="#fromRGB(byte,byte,byte)"><code>fromRGB(byte, byte, byte)</code></a>.
+ <p>
+ Immutable class.</div>
 </li>
 </ul>
 </div>
@@ -324,10 +327,10 @@ extends java.lang.Object</pre>
 </td>
 </tr>
 <tr id="i5" class="rowColor">
-<td class="colFirst"><code>protected java.lang.String</code></td>
+<td class="colFirst"><code>java.lang.String</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getCodeName()">getCodeName</a></span>()</code></th>
 <td class="colLast">
-<div class="block">Gets the code name if the color is "special".</div>
+<div class="block">Gets the code name.</div>
 </td>
 </tr>
 <tr id="i6" class="altColor">
@@ -367,6 +370,13 @@ extends java.lang.Object</pre>
 <td class="colFirst"><code>java.lang.String</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#toString()">toString</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
+</tr>
+<tr id="i12" class="altColor">
+<td class="colFirst"><code>static java.util.Collection&lt;<a href="ChatColor.html" title="class in net.minestom.server.chat">ChatColor</a>&gt;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#values()">values</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Gets a collection of all chat colors</div>
+</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -637,7 +647,8 @@ public static&nbsp;<a href="ChatColor.html" title="class in net.minestom.server.
 <li class="blockList">
 <h4>fromName</h4>
 <pre class="methodSignature">@NotNull
-public static&nbsp;<a href="ChatColor.html" title="class in net.minestom.server.chat">ChatColor</a>&nbsp;fromName&#8203;(java.lang.String&nbsp;name)</pre>
+public static&nbsp;<a href="ChatColor.html" title="class in net.minestom.server.chat">ChatColor</a>&nbsp;fromName&#8203;(@NotNull
+                                 java.lang.String&nbsp;name)</pre>
 <div class="block">Gets a color based on its name (eg: white, black, aqua, etc...).</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -678,6 +689,21 @@ public static&nbsp;<a href="ChatColor.html" title="class in net.minestom.server.
 <dd><code>colorCode</code> - the color legacy code</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>the color associated with the code, <a href="#NO_COLOR"><code>NO_COLOR</code></a> if not found</dd>
+</dl>
+</li>
+</ul>
+<a id="values()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>values</h4>
+<pre class="methodSignature">@NotNull
+public static&nbsp;java.util.Collection&lt;<a href="ChatColor.html" title="class in net.minestom.server.chat">ChatColor</a>&gt;&nbsp;values()</pre>
+<div class="block">Gets a collection of all chat colors</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>a collection of all chat colors</dd>
 </dl>
 </li>
 </ul>
@@ -753,11 +779,11 @@ public static&nbsp;<a href="ChatColor.html" title="class in net.minestom.server.
 <li class="blockList">
 <h4>getCodeName</h4>
 <pre class="methodSignature">@Nullable
-protected&nbsp;java.lang.String&nbsp;getCodeName()</pre>
-<div class="block">Gets the code name if the color is "special".</div>
+public&nbsp;java.lang.String&nbsp;getCodeName()</pre>
+<div class="block">Gets the code name.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>the special code name</dd>
+<dd>the color code name, null if not any</dd>
 </dl>
 </li>
 </ul>

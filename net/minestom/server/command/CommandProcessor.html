@@ -123,13 +123,13 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <li class="blockList">
 <hr>
 <pre>public interface <span class="typeNameLabel">CommandProcessor</span></pre>
-<div class="block">Represents a simple command which give you the whole string representation
+<div class="block">Represents a simple command which give you the whole string representation.
  <p>
  <a href="#process(net.minestom.server.command.CommandSender,java.lang.String,java.lang.String%5B%5D)"><code>process(CommandSender, String, String[])</code></a> is called no matter what if a <a href="CommandSender.html" title="interface in net.minestom.server.command"><code>CommandSender</code></a> sends a command which
- start by <a href="#getCommandName()"><code>getCommandName()</code></a> or any of the aliases in <a href="#getAliases()"><code>getAliases()</code></a>
+ start by <a href="#getCommandName()"><code>getCommandName()</code></a> or any of the aliases in <a href="#getAliases()"><code>getAliases()</code></a>.
  <p>
  Tab-completion can be activated by overriding <a href="#enableWritingTracking()"><code>enableWritingTracking()</code></a> and return true, you should then listen to
- <a href="#onWrite(java.lang.String)"><code>onWrite(String)</code></a> and return the possible completions to suggest.
+ <a href="#onWrite(net.minestom.server.command.CommandSender,java.lang.String)"><code>onWrite(CommandSender, String)</code></a> and return the possible completions to suggest.
  <p>
  Please be sure to check <a href="builder/Command.html" title="class in net.minestom.server.command.builder"><code>Command</code></a> as it is likely to be better for your use case.</div>
 </li>
@@ -156,7 +156,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <td class="colFirst"><code>default boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#enableWritingTracking()">enableWritingTracking</a></span>()</code></th>
 <td class="colLast">
-<div class="block">Needed to enable <a href="#onWrite(java.lang.String)"><code>onWrite(String)</code></a> callback.</div>
+<div class="block">Needed to enable <a href="#onWrite(net.minestom.server.command.CommandSender,java.lang.String)"><code>onWrite(CommandSender, String)</code></a> callback.</div>
 </td>
 </tr>
 <tr id="i1" class="rowColor">
@@ -182,7 +182,8 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </tr>
 <tr id="i4" class="altColor">
 <td class="colFirst"><code>default java.lang.String[]</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#onWrite(java.lang.String)">onWrite</a></span>&#8203;(java.lang.String&nbsp;text)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#onWrite(net.minestom.server.command.CommandSender,java.lang.String)">onWrite</a></span>&#8203;(<a href="CommandSender.html" title="interface in net.minestom.server.command">CommandSender</a>&nbsp;sender,
+       java.lang.String&nbsp;text)</code></th>
 <td class="colLast">
 <div class="block">Allows for tab auto completion, this is called everytime the player press a key in the chat.</div>
 </td>
@@ -193,7 +194,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
        java.lang.String&nbsp;command,
        java.lang.String[]&nbsp;args)</code></th>
 <td class="colLast">
-<div class="block">Called when the command is executed by a <a href="CommandSender.html" title="interface in net.minestom.server.command"><code>CommandSender</code></a></div>
+<div class="block">Called when the command is executed by a <a href="CommandSender.html" title="interface in net.minestom.server.command"><code>CommandSender</code></a>.</div>
 </td>
 </tr>
 </table>
@@ -257,7 +258,7 @@ java.lang.String[]&nbsp;getAliases()</pre>
                 java.lang.String&nbsp;command,
                 @NotNull
                 java.lang.String[]&nbsp;args)</pre>
-<div class="block">Called when the command is executed by a <a href="CommandSender.html" title="interface in net.minestom.server.command"><code>CommandSender</code></a></div>
+<div class="block">Called when the command is executed by a <a href="CommandSender.html" title="interface in net.minestom.server.command"><code>CommandSender</code></a>.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>sender</code> - the sender which executed the command</dd>
@@ -278,7 +279,7 @@ java.lang.String[]&nbsp;getAliases()</pre>
                   <a href="../entity/Player.html" title="class in net.minestom.server.entity">Player</a>&nbsp;player)</pre>
 <div class="block">Called to know if a player has access to the command.
  <p>
- Right now it is only used to know if the player should see the command in auto-completion
+ Right now it is only used to know if the player should see the command in auto-completion.
  Conditions still need to be checked in <a href="#process(net.minestom.server.command.CommandSender,java.lang.String,java.lang.String%5B%5D)"><code>process(CommandSender, String, String[])</code></a>.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -295,18 +296,18 @@ java.lang.String[]&nbsp;getAliases()</pre>
 <li class="blockList">
 <h4>enableWritingTracking</h4>
 <pre class="methodSignature">default&nbsp;boolean&nbsp;enableWritingTracking()</pre>
-<div class="block">Needed to enable <a href="#onWrite(java.lang.String)"><code>onWrite(String)</code></a> callback.
+<div class="block">Needed to enable <a href="#onWrite(net.minestom.server.command.CommandSender,java.lang.String)"><code>onWrite(CommandSender, String)</code></a> callback.
  <p>
  Be aware that enabling it can cost some performance because of how often it will be called.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>true to enable writing tracking (and server auto completion)</dd>
 <dt><span class="seeLabel">See Also:</span></dt>
-<dd><a href="#onWrite(java.lang.String)"><code>onWrite(String)</code></a></dd>
+<dd><a href="#onWrite(net.minestom.server.command.CommandSender,java.lang.String)"><code>onWrite(CommandSender, String)</code></a></dd>
 </dl>
 </li>
 </ul>
-<a id="onWrite(java.lang.String)">
+<a id="onWrite(net.minestom.server.command.CommandSender,java.lang.String)">
 <!--   -->
 </a>
 <ul class="blockListLast">
@@ -314,15 +315,17 @@ java.lang.String[]&nbsp;getAliases()</pre>
 <h4>onWrite</h4>
 <pre class="methodSignature">@Nullable
 default&nbsp;java.lang.String[]&nbsp;onWrite&#8203;(@NotNull
+                                   <a href="CommandSender.html" title="interface in net.minestom.server.command">CommandSender</a>&nbsp;sender,
                                    java.lang.String&nbsp;text)</pre>
 <div class="block">Allows for tab auto completion, this is called everytime the player press a key in the chat.
  <p>
  WARNING: <a href="#enableWritingTracking()"><code>enableWritingTracking()</code></a> needs to return true, you need to override it by default.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>sender</code> - the command sender</dd>
 <dd><code>text</code> - the whole player text</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>the array containing all the suggestion for the current arg (split " "), can be null</dd>
+<dd>the array containing all the suggestions for the current arg (split SPACE), can be null</dd>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="#enableWritingTracking()"><code>enableWritingTracking()</code></a></dd>
 </dl>

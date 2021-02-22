@@ -14,6 +14,8 @@ net.minestom.server.command.builder.arguments.minecraft.registry
 net.minestom.server.command.builder.arguments.number
 net.minestom.server.command.builder.arguments.relative
 net.minestom.server.command.builder.condition
+net.minestom.server.command.builder.exception
+net.minestom.server.command.builder.parser
 net.minestom.server.data
 net.minestom.server.data.type
 net.minestom.server.data.type.array
@@ -42,6 +44,7 @@ net.minestom.server.event.instance
 net.minestom.server.event.inventory
 net.minestom.server.event.item
 net.minestom.server.event.player
+net.minestom.server.exception
 net.minestom.server.extensions
 net.minestom.server.extras
 net.minestom.server.extras.bungee
@@ -70,6 +73,7 @@ net.minestom.server.inventory.condition
 net.minestom.server.inventory.type
 net.minestom.server.item
 net.minestom.server.item.attribute
+net.minestom.server.item.firework
 net.minestom.server.item.metadata
 net.minestom.server.item.rule
 net.minestom.server.listener
@@ -109,18 +113,21 @@ net.minestom.server.thread
 net.minestom.server.timer
 net.minestom.server.utils
 net.minestom.server.utils.advancement
+net.minestom.server.utils.async
 net.minestom.server.utils.binary
 net.minestom.server.utils.block
 net.minestom.server.utils.cache
 net.minestom.server.utils.callback
 net.minestom.server.utils.callback.validator
 net.minestom.server.utils.chunk
+net.minestom.server.utils.clone
 net.minestom.server.utils.debug
 net.minestom.server.utils.entity
 net.minestom.server.utils.instance
 net.minestom.server.utils.inventory
 net.minestom.server.utils.location
 net.minestom.server.utils.math
+net.minestom.server.utils.mojang
 net.minestom.server.utils.ownership
 net.minestom.server.utils.player
 net.minestom.server.utils.position
