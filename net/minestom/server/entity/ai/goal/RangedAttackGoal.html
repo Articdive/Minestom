@@ -211,7 +211,7 @@ extends <a href="../GoalSelector.html" title="class in net.minestom.server.entit
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setProjectileGenerator(java.util.function.BiFunction)">setProjectileGenerator</a></span>&#8203;(java.util.function.BiFunction&lt;<a href="../../Entity.html" title="class in net.minestom.server.entity">Entity</a>,&#8203;<a href="../../../utils/Position.html" title="class in net.minestom.server.utils">Position</a>,&#8203;<a href="../../type/Projectile.html" title="interface in net.minestom.server.entity.type">Projectile</a>&gt;&nbsp;projectileGenerator)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setProjectileGenerator(java.util.function.Function)">setProjectileGenerator</a></span>&#8203;(java.util.function.Function&lt;<a href="../../Entity.html" title="class in net.minestom.server.entity">Entity</a>,&#8203;<a href="../../type/projectile/EntityProjectile.html" title="class in net.minestom.server.entity.type.projectile">EntityProjectile</a>&gt;&nbsp;projectileGenerator)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i2" class="altColor">
@@ -248,7 +248,7 @@ extends <a href="../GoalSelector.html" title="class in net.minestom.server.entit
 <!--   -->
 </a>
 <h3>Methods inherited from class&nbsp;net.minestom.server.entity.ai.<a href="../GoalSelector.html" title="class in net.minestom.server.entity.ai">GoalSelector</a></h3>
-<code><a href="../GoalSelector.html#findAndUpdateTarget()">findAndUpdateTarget</a>, <a href="../GoalSelector.html#findTarget()">findTarget</a>, <a href="../GoalSelector.html#getEntityCreature()">getEntityCreature</a>, <a href="../GoalSelector.html#setEntityCreature(net.minestom.server.entity.EntityCreature)">setEntityCreature</a></code></li>
+<code><a href="../GoalSelector.html#findTarget()">findTarget</a>, <a href="../GoalSelector.html#getAIGroup()">getAIGroup</a>, <a href="../GoalSelector.html#getEntityCreature()">getEntityCreature</a>, <a href="../GoalSelector.html#setEntityCreature(net.minestom.server.entity.EntityCreature)">setEntityCreature</a></code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a id="methods.inherited.from.class.java.lang.Object">
@@ -312,13 +312,13 @@ extends <a href="../GoalSelector.html" title="class in net.minestom.server.entit
 <!--   -->
 </a>
 <h3>Method Detail</h3>
-<a id="setProjectileGenerator(java.util.function.BiFunction)">
+<a id="setProjectileGenerator(java.util.function.Function)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>setProjectileGenerator</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;setProjectileGenerator&#8203;(java.util.function.BiFunction&lt;<a href="../../Entity.html" title="class in net.minestom.server.entity">Entity</a>,&#8203;<a href="../../../utils/Position.html" title="class in net.minestom.server.utils">Position</a>,&#8203;<a href="../../type/Projectile.html" title="interface in net.minestom.server.entity.type">Projectile</a>&gt;&nbsp;projectileGenerator)</pre>
+<pre class="methodSignature">public&nbsp;void&nbsp;setProjectileGenerator&#8203;(java.util.function.Function&lt;<a href="../../Entity.html" title="class in net.minestom.server.entity">Entity</a>,&#8203;<a href="../../type/projectile/EntityProjectile.html" title="class in net.minestom.server.entity.type.projectile">EntityProjectile</a>&gt;&nbsp;projectileGenerator)</pre>
 </li>
 </ul>
 <a id="shouldStart()">

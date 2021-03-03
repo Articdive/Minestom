@@ -131,7 +131,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <li class="blockList">
 <dl>
 <dt>Direct Known Subclasses:</dt>
-<dd><code><a href="goal/DoNothingGoal.html" title="class in net.minestom.server.entity.ai.goal">DoNothingGoal</a></code>, <code><a href="goal/EatBlockGoal.html" title="class in net.minestom.server.entity.ai.goal">EatBlockGoal</a></code>, <code><a href="goal/FollowTargetGoal.html" title="class in net.minestom.server.entity.ai.goal">FollowTargetGoal</a></code>, <code><a href="goal/MeleeAttackGoal.html" title="class in net.minestom.server.entity.ai.goal">MeleeAttackGoal</a></code>, <code><a href="goal/RandomLookAroundGoal.html" title="class in net.minestom.server.entity.ai.goal">RandomLookAroundGoal</a></code>, <code><a href="goal/RandomStrollGoal.html" title="class in net.minestom.server.entity.ai.goal">RandomStrollGoal</a></code>, <code><a href="goal/RangedAttackGoal.html" title="class in net.minestom.server.entity.ai.goal">RangedAttackGoal</a></code></dd>
+<dd><code><a href="goal/CombinedAttackGoal.html" title="class in net.minestom.server.entity.ai.goal">CombinedAttackGoal</a></code>, <code><a href="goal/DoNothingGoal.html" title="class in net.minestom.server.entity.ai.goal">DoNothingGoal</a></code>, <code><a href="goal/EatBlockGoal.html" title="class in net.minestom.server.entity.ai.goal">EatBlockGoal</a></code>, <code><a href="goal/FollowTargetGoal.html" title="class in net.minestom.server.entity.ai.goal">FollowTargetGoal</a></code>, <code><a href="goal/MeleeAttackGoal.html" title="class in net.minestom.server.entity.ai.goal">MeleeAttackGoal</a></code>, <code><a href="goal/RandomLookAroundGoal.html" title="class in net.minestom.server.entity.ai.goal">RandomLookAroundGoal</a></code>, <code><a href="goal/RandomStrollGoal.html" title="class in net.minestom.server.entity.ai.goal">RandomStrollGoal</a></code>, <code><a href="goal/RangedAttackGoal.html" title="class in net.minestom.server.entity.ai.goal">RangedAttackGoal</a></code></dd>
 </dl>
 <hr>
 <pre>public abstract class <span class="typeNameLabel">GoalSelector</span>
@@ -209,17 +209,15 @@ extends java.lang.Object</pre>
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code><a href="../Entity.html" title="class in net.minestom.server.entity">Entity</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#findAndUpdateTarget()">findAndUpdateTarget</a></span>()</code></th>
-<td class="colLast">
-<div class="block">Finds a target for an entity.</div>
-</td>
-</tr>
-<tr id="i2" class="altColor">
-<td class="colFirst"><code><a href="../Entity.html" title="class in net.minestom.server.entity">Entity</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#findTarget()">findTarget</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Finds a target based on the entity <a href="TargetSelector.html" title="class in net.minestom.server.entity.ai"><code>TargetSelector</code></a>.</div>
 </td>
+</tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code>protected <a href="EntityAIGroup.html" title="class in net.minestom.server.entity.ai">EntityAIGroup</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getAIGroup()">getAIGroup</a></span>()</code></th>
+<td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i3" class="rowColor">
 <td class="colFirst"><code><a href="../EntityCreature.html" title="class in net.minestom.server.entity">EntityCreature</a></code></td>
@@ -403,23 +401,6 @@ public&nbsp;<a href="../Entity.html" title="class in net.minestom.server.entity"
 </dl>
 </li>
 </ul>
-<a id="findAndUpdateTarget()">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>findAndUpdateTarget</h4>
-<pre class="methodSignature">@Nullable
-public&nbsp;<a href="../Entity.html" title="class in net.minestom.server.entity">Entity</a>&nbsp;findAndUpdateTarget()</pre>
-<div class="block">Finds a target for an entity.
- If the current one is not present, falls back to <a href="#findTarget()"><code>findTarget()</code></a>
- and updates the target inside the entity.</div>
-<dl>
-<dt><span class="returnLabel">Returns:</span></dt>
-<dd>the target entity, null if not found</dd>
-</dl>
-</li>
-</ul>
 <a id="getEntityCreature()">
 <!--   -->
 </a>
@@ -438,7 +419,7 @@ public&nbsp;<a href="../EntityCreature.html" title="class in net.minestom.server
 <a id="setEntityCreature(net.minestom.server.entity.EntityCreature)">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>setEntityCreature</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;setEntityCreature&#8203;(@NotNull
@@ -446,12 +427,22 @@ public&nbsp;<a href="../EntityCreature.html" title="class in net.minestom.server
 <div class="block">Changes the entity affected by the goal selector.
  <p>
  WARNING: this does not add the goal selector to <code>entityCreature</code>,
- this only change the internal entity field. Be sure to remove the goal from
- the previous entity and add it to the new one using <a href="../EntityCreature.html#getGoalSelectors()"><code>EntityCreature.getGoalSelectors()</code></a>.</div>
+ this only change the internal entity AI group's field. Be sure to remove the goal from
+ the previous entity AI group and add it to the new one using <a href="EntityAIGroup.html#getGoalSelectors()"><code>EntityAIGroup.getGoalSelectors()</code></a>.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>entityCreature</code> - the new affected entity</dd>
 </dl>
+</li>
+</ul>
+<a id="getAIGroup()">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>getAIGroup</h4>
+<pre class="methodSignature">@Nullable
+protected&nbsp;<a href="EntityAIGroup.html" title="class in net.minestom.server.entity.ai">EntityAIGroup</a>&nbsp;getAIGroup()</pre>
 </li>
 </ul>
 </li>
